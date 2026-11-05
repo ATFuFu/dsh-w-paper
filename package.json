@@ -1,0 +1,47 @@
+{
+  "name": "dsh-w-paper",
+  "version": "1.0.0",
+  "description": "Wallpaper for the DeepSeek Harness Web UI: generated presets or your own picture behind the app, with blur, sharpen, saturation, contrast, offset, mouse parallax and per-surface transparency.",
+  "type": "module",
+  "license": "MIT",
+  "author": "dsh-w-paper contributors",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "plugin",
+    "wallpaper",
+    "background",
+    "theme",
+    "parallax"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ATFuFu/dsh-w-paper.git"
+  },
+  "homepage": "https://github.com/ATFuFu/dsh-w-paper#readme",
+  "bugs": {
+    "url": "https://github.com/ATFuFu/dsh-w-paper/issues"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-conversation", "@deepseek-ai/dsh-client-ui-layout"]
+    }
+  }
+}
